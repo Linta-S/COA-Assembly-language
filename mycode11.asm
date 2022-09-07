@@ -1,0 +1,45 @@
+ .MODEL SMALL
+
+.STACK 1000H 
+
+.DATA
+
+
+.CODE
+
+MOV CX,20
+
+MOV BX,100 
+ 
+
+LOOPING: 
+
+
+MOV AH,2
+
+MOV DX,BX 
+
+INT 21H 
+
+
+MOV DX,'+'
+
+INT 21H
+
+
+
+SUB BX,5 
+
+DEC CX 
+
+
+JNZ LOOPING   
+
+JZ PRINT
+
+PRINT:
+
+MOV AH,4CH
+
+INT 21H 
+               
